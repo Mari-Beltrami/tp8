@@ -1,0 +1,60 @@
+
+{
+    "servicioTickets": {
+      "descripcion": "Servicio de Tickets (API REST)",
+      "funcionalidades": [
+        {
+          "ruta": "POST /tickets",
+          "descripcion": "Crea un nuevo ticket.",
+          "requestJSON": {
+            "clienteId": "12345",
+            "descripcion": "Problema con la conexión a Internet",
+            "acciones": "Reiniciar el router",
+            "fechaAlta": "2024-09-10"
+          },
+          "responseJSON": {
+            "ticketId": "T-67890",
+            "estado": "Abierto",
+            "fechaAlta": "2024-09-10",
+            "mensaje": "El ticket ha sido creado exitosamente"
+          }
+        },
+        {
+          "ruta": "GET /tickets/:ticketId",
+          "descripcion": "Consulta el estado de un ticket por su ID.",
+          "request": "(sin cuerpo)",
+          "responseJSON": {
+            "ticketId": "T-67890",
+            "clienteId": "12345",
+            "descripcion": "Problema con la conexión a Internet",
+            "estado": "Asignado",
+            "acciones": "Esperando soporte técnico",
+            "fechaAlta": "2024-09-10",
+            "fechaUltimaActualizacion": "2024-09-12"
+          }
+        },
+        {
+          "ruta": "PUT /tickets/:ticketId",
+          "descripcion": "Actualiza la información de un ticket.",
+          "requestJSON": {
+            "estado": "En proceso",
+            "acciones": "Técnico asignado",
+            "problemaId": "P-98765"
+          },
+          "responseJSON": {
+            "ticketId": "T-67890",
+            "mensaje": "El ticket ha sido actualizado correctamente"
+          }
+        },
+        {
+          "ruta": "DELETE /tickets/:ticketId",
+          "descripcion": "Elimina un ticket por su ID.",
+          "request": "(sin cuerpo)",
+          "responseJSON": {
+            "mensaje": "El ticket ha sido eliminado exitosamente"
+          }
+        }
+      ]
+    }
+  }
+  
